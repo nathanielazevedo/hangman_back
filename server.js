@@ -19,7 +19,7 @@ app.post("/leaderboard", async (req, res) => {
     const input = req.body;
     const { data, error } = await supabase.from("leaderboard").insert(input);
     if (error) throw new Error(error);
-    res.status(200).send(data[0]);
+    res.status(200).send();
   } catch (error) {
     console.log(JSON.stringify(error));
     res.status(500).send(error);
